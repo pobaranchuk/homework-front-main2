@@ -39,7 +39,7 @@ export const message0: MessageType = {
         name: 'Brad Pitt',  // можно менять
     },
     message: {
-        text: 'Hello Bozo bla aaaaaaa .....', // можно менять
+        text: 'Hello Bozo bla aaaaaaa ...', // можно менять
         time: '22:00', // можно менять
     },
 }
@@ -51,7 +51,7 @@ export const friendMessage0: MessageType = {
     },
     message: {
         text: 'зеркальное сообщение для тренировки css', // можно менять
-        time: '22:00', // можно менять
+        time: '22:01', // можно менять
     },
 }
 
@@ -61,10 +61,8 @@ const HW1 = () => {
             <div className={s2.hwTitle}>Homework #1</div>
             <div className={s2.hw}>
                 {/*проверка отображения (не менять)*/}
-                <div>
-                    <Message message={message0}/>
-                    <FriendMessage message={friendMessage0}/>
-                </div>
+                <Message message={message0}/>
+                <FriendMessage message={friendMessage0}/>
 
                 {/*для автоматической проверки дз (не менять)*/}
                 {/*<MessageSender M={Message}/>*/}
