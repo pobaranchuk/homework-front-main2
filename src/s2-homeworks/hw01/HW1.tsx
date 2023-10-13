@@ -11,7 +11,7 @@ import avatar2 from './avatar2.png'
 * 2 - описать тип MessagePropsType в файле Message.tsx  +
 * 3 - в файле Message.tsx отобразить приходящие данные +
 * 4 - выполнить пункты 2, 3 в файле FriendMessage.tsx
-* 5 - сделать стили в соответствии с дизайном
+* 5 - сделать стили в соответствии с дизайном https://www.figma.com/file/9L5iRbECtW4vAnlUklpgcp/Home-Task-%231?node-id=6%3A65&mode=dev
 * */
 
 // нужно создать правильный тип вместо any
