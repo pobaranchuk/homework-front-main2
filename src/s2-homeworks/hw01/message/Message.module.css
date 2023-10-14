@@ -1,12 +1,13 @@
 .message {
-    width: 527px;
-    height: 60px;
+
     display: flex;
     flex-direction: column;
 
 }
 
 .imageAndText {
+    width: 527px;
+    height: 60px;
     display: flex;
     flex-direction: row-reverse;
 }
