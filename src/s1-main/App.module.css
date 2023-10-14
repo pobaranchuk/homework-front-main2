@@ -1,18 +1,33 @@
 .App {
     --header_height: 60px;
 }
-
 .hw {
+    /*border: 2px solid mediumvioletred;*/
     width: 1280px;
     height: 720px;
-    padding: 131px 0 216px 0;
-
+    padding: 131px 68px 216px 68px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 3.2fr 0.4fr;
+    grid-template-areas:
+    "."
+    ". ."
+    ".";
 }
 
-.hr {
-    display: block;
-    width: 1280px;
-    height: 1px;
+.dialogs {
+    /*border: 2px solid mediumvioletred;*/
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    ". .";
+}
+
+.sendSection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .hwTitle {
@@ -24,4 +39,35 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+    & hr {
+        width: 1280px;
+        height: 1px;
+    }
+    margin-left: 24px;
+}
+
+.messageInput{
+    width: 976px;
+    height: 40px;
+    border-radius: 20px;
+    border: 1px solid #4A4A4A;
+    background-color: #F5F7FB;
+    padding: 7px 15px;
+    display: inline-block;
+}
+
+.sendButton{
+    width: 120px;
+    height: 40px;
+    border-radius: 20px;
+    color: #FFF;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background-color: #06C;
+    border: none;
+    cursor: pointer;
 }

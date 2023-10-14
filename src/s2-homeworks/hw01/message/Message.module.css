@@ -1,8 +1,8 @@
 .message {
-
     display: flex;
     flex-direction: column;
-
+    align-items: end;
+    margin-top: 24px;
 }
 
 .imageAndText {
@@ -18,31 +18,47 @@
 }
 
 .text {
-    background-color: #0066CC;
+    position: relative;
     border-radius: 12px;
+    background-color: #0066CC;
+    margin-right: 10px;
 }
 
 .text:after {
-
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-bottom: 15px solid #0066CC;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    bottom: 0;
+    right: -15px;
 }
 
 .name {
+    display: flex;
+    flex-direction: row-reverse;
     color: #FFF;
     font-family: Montserrat, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    padding-top: 7px;
+    padding-right: 13px;
 }
 
 .messageText {
-
     color: #FFF;
     font-family: Montserrat, sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    padding-top: 7px;
+    padding-left: 13px;
+    margin-right: 13px;
 
 }
 

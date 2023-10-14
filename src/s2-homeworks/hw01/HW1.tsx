@@ -60,13 +60,20 @@ const HW1 = () => {
         <div id={'hw1'}>
             <div className={s2.hw}>
                 <div className={s2.hwTitle}>Homework #1</div>
-                <hr className={s2.hr}/>
+                {/*<hr className={s2.hr}/>*/}
                 {/*проверка отображения (не менять)*/}
-                <Message message={message0}/>
-                <FriendMessage message={friendMessage0}/>
+                <div className={s2.dialogs}>
+                    <FriendMessage message={friendMessage0}/>
+                    <Message message={message0}/>
 
-                {/*для автоматической проверки дз (не менять)*/}
-                {/*<MessageSender M={Message}/>*/}
+                    {/*для автоматической проверки дз (не менять)*/}
+                    {/*<MessageSender M={Message}/>*/}
+                </div>
+                <div className={s2.sendSection}>
+                    <input className={s2.messageInput} placeholder={"Type a message"} />
+                    <button className={s2.sendButton} type={"submit"}>Send</button>
+                </div>
+
             </div>
         </div>
     )
