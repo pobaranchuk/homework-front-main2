@@ -67,7 +67,7 @@ const HW1 = () => {
                     <Message message={message0}/>
 
                     {/*для автоматической проверки дз (не менять)*/}
-                    {/*<MessageSender M={Message}/>*/}
+                    <MessageSender M={Message}/>
                 </div>
                 <div className={s2.sendSection}>
                     <input className={s2.messageInput} placeholder={"Type a message"} />
