@@ -5,15 +5,34 @@
 }
 
 .error {
+    color: #C00;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .input {
+    display: flex;
+    width: 372px;
+    height: 36px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .input:focus {
+
 }
 
 .errorInput {
+    color: #C00;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
 
 .button {
