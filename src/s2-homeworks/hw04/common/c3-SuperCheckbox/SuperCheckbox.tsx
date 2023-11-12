@@ -6,8 +6,7 @@ import React, {
 import s from './SuperCheckbox.module.css'
 
 // тип пропсов обычного инпута
-type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,
-    HTMLInputElement>
+type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>,HTMLInputElement>
 
 type SuperCheckboxPropsType = Omit<DefaultInputPropsType, 'type'> & {
     onChangeChecked?: (checked: boolean) => void
@@ -27,7 +26,8 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = (
     }
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
-        // задачка на написание онченджа
+        onChange?.(e) // если есть пропс onChange, то передать ему е (поскольку onChange не обязателен)
+        onChangeChecked?.(e.currentTarget.checked)
 
     }
 
