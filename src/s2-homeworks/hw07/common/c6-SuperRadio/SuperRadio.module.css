@@ -1,15 +1,22 @@
 .radio {
+    margin: 2px;
 }
 
 .radio::before {
 }
 
-
 .radio:checked::before {
+
 }
 
 .label {
+    margin: 10px;
 }
 
 .options {
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }
