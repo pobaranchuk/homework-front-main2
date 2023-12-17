@@ -5,10 +5,18 @@
 }
 
 .watch {
+    width: 150px;
 }
 
 .watch strong {
 }
 
 .more {
+    width: 250px;
+    color: rgba(0, 0, 0, 0.50);
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
 }

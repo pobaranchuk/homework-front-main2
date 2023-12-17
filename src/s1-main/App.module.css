@@ -5,7 +5,7 @@
     /*border: 2px solid mediumvioletred;*/
     width: 100%;
     height: 720px;
-    padding: 131px 68px 216px 68px;
+    padding: 30px;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 0.4fr 3.2fr 0.4fr;
