@@ -25,12 +25,9 @@ function HW11() {
             // Иначе обновить только первое состояние
             setValue1(value);
         }
-
         // Дополнительно, сохранить состояния в localStorage
-        saveState('hw11-value1', value1);
-        saveState('hw11-value2', value2);
-
-
+        saveState('hw11-value1', value1)
+        saveState('hw11-value2', value2)
     }
 
     return (
