@@ -13,12 +13,11 @@
     --background: #212A34;
 }
 
-.hw12 {
+html {
     background-color: var(--background);
     color: var(--color);
 }
 
 .select {
-
 
 }

@@ -37,7 +37,7 @@ const HW12 = () => {
     }, [themeId])
 
     return (
-        <div id={'hw12'} className={s.hw12}>
+        <div id={'hw12'}>
             <div id={'hw12-text'} className={s2.hwTitle}>
                 Homework #12
             </div>
