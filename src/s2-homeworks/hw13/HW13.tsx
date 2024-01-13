@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import axios, {AxiosError} from 'axios'
+import axios from 'axios'
 import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
@@ -19,8 +19,8 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+
     const [isDisabled, setIsDisabled] = useState(false)
-    let errorMessage = ""
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -39,34 +39,35 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText("...всё ок)")
+                setText(res.data.errorText)
+                setInfo(res.data.info)
 
             })
             .catch((e) => {
-                errorMessage = e?.response?.data?.errorText || e?.message;
                 switch (e.response.status) {
                     case 400:
                         setCode('Код 400!');
                         setImage(error400);
-                        setText(errorMessage);
+                        setText(e?.response?.data?.errorText);
+                        setInfo(e?.response?.data?.info)
                         break;
                     case 500:
                         setCode('Код 500!');
                         setImage(error500);
-                        setText(errorMessage);
+                        setText(e?.response?.data?.errorText);
+                        setInfo(e?.response?.data?.info)
                         break;
                     case 0:
-                        setCode('');
+                        setCode('Error!');
                         setImage(errorUnknown);
-                        setText(errorMessage);
+                        setText(e?.message);
+                        setInfo(e?.name)
                         break;
                     default:
-                        // Добавьте дополнительные случаи по необходимости
                         break;
                 }
             })
             .finally(() => {
-                setInfo('')
                 setIsDisabled(false)
             })
     }
