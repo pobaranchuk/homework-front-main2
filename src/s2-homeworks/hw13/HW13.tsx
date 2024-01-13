@@ -39,12 +39,11 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                setText("...всё ок)\n" +
-                    "код 200 - обычно означает что скорее всего всё ок)")
+                setText("...всё ок)")
 
             })
             .catch((e) => {
-                errorMessage = e?.response?.data?.errorText + e?.response?.data?.info;
+                errorMessage = e?.response?.data?.errorText || e?.message;
                 switch (e.response.status) {
                     case 400:
                         setCode('Код 400!');
@@ -59,7 +58,7 @@ const HW13 = () => {
                     case 0:
                         setCode('');
                         setImage(errorUnknown);
-                        setText("Network Error\nAxiosError");
+                        setText(errorMessage);
                         break;
                     default:
                         // Добавьте дополнительные случаи по необходимости
