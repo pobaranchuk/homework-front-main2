@@ -2,6 +2,9 @@
 }
 
 .responseContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .imageContainer {
@@ -11,6 +14,12 @@
 }
 
 .textContainer{
+    color: #000;
+    font-family: Montserrat, sans-serif;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
 
 .code {

@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import s2 from '../../s1-main/App.module.css'
 import s from './HW13.module.css'
 import SuperButton from '../hw04/common/c2-SuperButton/SuperButton'
-import axios from 'axios'
+import axios, {AxiosError} from 'axios'
 import success200 from './images/200.svg'
 import error400 from './images/400.svg'
 import error500 from './images/500.svg'
@@ -19,6 +19,8 @@ const HW13 = () => {
     const [text, setText] = useState('')
     const [info, setInfo] = useState('')
     const [image, setImage] = useState('')
+    const [isDisabled, setIsDisabled] = useState(false)
+    let errorMessage = ""
 
     const send = (x?: boolean | null) => () => {
         const url =
@@ -29,6 +31,7 @@ const HW13 = () => {
         setCode('')
         setImage('')
         setText('')
+        setIsDisabled(true)
         setInfo('...loading')
 
         axios
@@ -36,12 +39,36 @@ const HW13 = () => {
             .then((res) => {
                 setCode('Код 200!')
                 setImage(success200)
-                // дописать
+                setText("...всё ок)\n" +
+                    "код 200 - обычно означает что скорее всего всё ок)")
 
             })
             .catch((e) => {
-                // дописать
-
+                errorMessage = e?.response?.data?.errorText + e?.response?.data?.info;
+                switch (e.response.status) {
+                    case 400:
+                        setCode('Код 400!');
+                        setImage(error400);
+                        setText(errorMessage);
+                        break;
+                    case 500:
+                        setCode('Код 500!');
+                        setImage(error500);
+                        setText(errorMessage);
+                        break;
+                    case 0:
+                        setCode('');
+                        setImage(errorUnknown);
+                        setText("Network Error\nAxiosError");
+                        break;
+                    default:
+                        // Добавьте дополнительные случаи по необходимости
+                        break;
+                }
+            })
+            .finally(() => {
+                setInfo('')
+                setIsDisabled(false)
             })
     }
 
@@ -55,8 +82,7 @@ const HW13 = () => {
                         id={'hw13-send-true'}
                         onClick={send(true)}
                         xType={'secondary'}
-                        // дописать
-
+                        disabled={isDisabled}
                     >
                         Send true
                     </SuperButton>
@@ -64,7 +90,7 @@ const HW13 = () => {
                         id={'hw13-send-false'}
                         onClick={send(false)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={isDisabled}
 
                     >
                         Send false
@@ -73,7 +99,7 @@ const HW13 = () => {
                         id={'hw13-send-undefined'}
                         onClick={send(undefined)}
                         xType={'secondary'}
-                        // дописать
+                        disabled={isDisabled}
 
                     >
                         Send undefined
@@ -82,7 +108,7 @@ const HW13 = () => {
                         id={'hw13-send-null'}
                         onClick={send(null)} // имитация запроса на не корректный адрес
                         xType={'secondary'}
-                        // дописать
+                        disabled={isDisabled}
 
                     >
                         Send null
