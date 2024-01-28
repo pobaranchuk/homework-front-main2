@@ -4,7 +4,7 @@
 .hw {
     /*border: 2px solid mediumvioletred;*/
     width: 100%;
-    max-height: 720px;
+    height: 720px;
     padding: 30px;
     display: grid;
     grid-template-columns: 1fr;
