@@ -28,14 +28,14 @@ const HW14 = () => {
     const [find, setFind] = useState('')
     const [isLoading, setLoading] = useState(false)
     const [searchParams, setSearchParams] = useSearchParams()
-    const [techs, setTechs] = useState<string[]>([])
+    const [techs, setTechs] = useState<string[]| undefined>([])
 
     const sendQuery = (value: string) => {
         setLoading(true)
         getTechs(value)
             .then((res) => {
                 // делает студент
-
+                setTechs(res?.data.techs)
                 // сохранить пришедшие данные
 
                 //
@@ -47,7 +47,7 @@ const HW14 = () => {
         // делает студент
 
         // добавить/заменить значение в квери урла
-        // setSearchParams(
+        setSearchParams(value)
 
         //
     }
@@ -58,7 +58,7 @@ const HW14 = () => {
         setFind(params.find || '')
     }, [])
 
-    const mappedTechs = techs.map(t => (
+    const mappedTechs = techs?.map(t => (
         <div key={t} id={'hw14-tech-' + t} className={s.tech}>
             {t}
         </div>
